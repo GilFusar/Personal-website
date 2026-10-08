@@ -1,95 +1,199 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Gilberto Fusar Imperatore - Personal Website</title>
 
     <style>
+
+        /* Impostazioni generali */
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            min-height: 100%;
+        }
+
         body {
             margin: 0;
+            padding: 20px;
+
+            width: 100%;
+            min-height: 100vh;
+
             font-family: Arial, sans-serif;
             background: #f2f2f2;
             color: #222;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
         }
 
+
+        /* Contenitore principale */
         .container {
-            background: white;
-            width: 90%;
+            width: 100%;
             max-width: 500px;
+
             padding: 40px;
+
+            background: white;
+
             text-align: center;
+
             border-radius: 15px;
+
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
         }
 
+
+        /* Titolo */
         h1 {
-            margin-bottom: 10px;
+            margin: 0 0 10px;
+
             font-size: 36px;
+            line-height: 1.2;
         }
 
+
+        /* Testo */
         p {
+            margin: 0 0 30px;
+
             color: #666;
-            margin-bottom: 30px;
+
+            line-height: 1.5;
         }
 
+
+        /* Pulsanti */
         .link {
             display: block;
-            text-decoration: none;
+
+            width: 100%;
+            max-width: 100%;
+
+            margin: 15px 0;
+            padding: 16px 20px;
+
             background: #222;
             color: white;
-            padding: 15px;
-            margin: 15px 0;
+
+            text-decoration: none;
+            text-align: center;
+
             border-radius: 8px;
-            transition: 0.3s;
+
+            font-size: 17px;
+            font-weight: 600;
+
+            transition: background 0.2s, transform 0.2s;
         }
 
+
+        /* Effetto quando passi sopra il pulsante con il mouse */
         .link:hover {
             background: #555;
             transform: scale(1.02);
         }
 
+
+        /* Footer */
         footer {
             margin-top: 30px;
+
             font-size: 13px;
             color: #999;
         }
+
+
+        /* SMARTPHONE */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 500px;
+
+                padding: 30px 20px;
+
+                border-radius: 12px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 16px;
+
+                margin-bottom: 25px;
+            }
+
+            .link {
+                width: 100%;
+
+                margin: 12px 0;
+                padding: 17px 15px;
+
+                min-height: 52px;
+
+                font-size: 16px;
+            }
+
+            footer {
+                margin-top: 25px;
+            }
+        }
+
     </style>
 </head>
+
 
 <body>
 
     <div class="container">
 
-        <h1>Gilberto Fusar Imperatore </h1>
+        <h1>Gilberto Fusar Imperatore</h1>
 
         <p>
             Welcome to my personal website<br>
             These are my links
         </p>
 
+
         <!-- Primo link -->
-		<a class="link" 
-		   href="https://wa.me/393661873324"
-		   target="_blank">
-			Personal WhatsApp
-		</a>
+        <a class="link"
+           href="https://wa.me/393661873324"
+           target="_blank">
+            Personal WhatsApp
+        </a>
+
 
         <!-- Secondo link -->
-		<a class="link" 
-			href="https://wa.me/393395410044?text=Buongiorno%2C%0Ami%20ha%20dato%20il%20contatto%20il%20Maestro%20Gilberto%20Fusar%20di%20Montecampione.%20Vorrei%20prenotare%20una%20lezione%20con%20lui."
-			target="_blank">
-			Book a lesson by WhatsApp
-		</a>
+        <a class="link"
+           href="https://wa.me/393395410044?text=Buongiorno%2C%0Ami%20ha%20dato%20il%20contatto%20il%20Maestro%20Gilberto%20Fusar%20di%20Montecampione.%20Vorrei%20prenotare%20una%20lezione%20con%20lui."
+           target="_blank">
+            Book a lesson by WhatsApp
+        </a>
+
 
         <!-- Terzo link -->
-		<a class="link" href="tel:+393661873324">
-			Chiama
-		</a>
+        <a class="link"
+           href="tel:+393661873324">
+            Chiama
+        </a>
+
 
         <footer>
             © 2026 Gilberto Fusar
@@ -98,4 +202,5 @@
     </div>
 
 </body>
+
 </html>
