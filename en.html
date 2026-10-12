@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#07182b">
+    <meta name="description" content="Personal website di Gilberto Fusar Imperatore. Contattami o prenota una lezione di sci.">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Gilberto Fusar Imperatore - Personal Website</title>
+
+    <style>
+        /* =========================
+           IMPOSTAZIONI GENERALI
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --background: #07182b;
+            --background-light: #102943;
+            --card: #0d2239;
+            --accent: #65d6ff;
+            --accent-dark: #20a8dc;
+            --text: #f4f8fc;
+            --text-muted: #a9bdcf;
+            --border: rgba(255, 255, 255, 0.12);
+        }
+
+        html {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px;
+
+            min-height: 100vh;
+            min-height: 100svh;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    #173c5b 0%,
+                    transparent 48%
+                ),
+                linear-gradient(
+                    145deg,
+                    var(--background) 0%,
+                    #091e33 55%,
+                    #061321 100%
+                );
+        }
+
+        /* =========================
+           CONTENITORE PRINCIPALE
+        ========================= */
+
+        .container {
+            position: relative;
+            overflow: hidden;
+
+            width: 100%;
+            max-width: 440px;
+
+            padding: 38px 32px 26px;
+
+            text-align: center;
+
+            background: linear-gradient(
+                160deg,
+                rgba(16, 41, 67, 0.97),
+                rgba(8, 26, 45, 0.98)
+            );
+
+            border: 1px solid var(--border);
+            border-radius: 22px;
+
+            box-shadow:
+                0 24px 65px rgba(0, 0, 0, 0.35),
+                0 0 35px rgba(101, 214, 255, 0.05);
+
+            animation: entrance 0.6s ease-out both;
+        }
+
+        /* Dettaglio grafico superiore */
+
+        .container::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 12%;
+
+            width: 76%;
+            height: 3px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--accent),
+                transparent
+            );
+        }
+
+        /* =========================
+           TITOLO
+        ========================= */
+
+        h1 {
+            margin: 0 0 16px;
+
+            font-size: clamp(27px, 7vw, 34px);
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -1px;
+
+            color: var(--text);
+
+            text-shadow: 0 3px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Piccolo elemento decorativo */
+
+        .title-line {
+            display: block;
+
+            width: 48px;
+            height: 3px;
+
+            margin: 0 auto 22px;
+
+            border-radius: 10px;
+            background: var(--accent);
+        }
+
+        /* =========================
+           TESTO INTRODUTTIVO
+        ========================= */
+
+        p {
+            margin: 0 0 28px;
+
+            color: var(--text-muted);
+
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PULSANTI
+        ========================= */
+
+        .link {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+
+            width: 100%;
+            min-height: 56px;
+
+            margin: 14px 0;
+            padding: 16px 19px;
+
+            background: rgba(255, 255, 255, 0.045);
+            color: var(--text);
+
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 13px;
+
+            text-decoration: none;
+            text-align: left;
+
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.4;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+            transition:
+                background 0.22s ease,
+                border-color 0.22s ease,
+                transform 0.22s ease,
+                box-shadow 0.22s ease;
+        }
+
+        /* Icone */
+
+        .link i {
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 35px;
+            height: 35px;
+
+            margin-left: auto;
+
+            color: var(--accent);
+            background: rgba(101, 214, 255, 0.10);
+
+            border-radius: 10px;
+
+            font-size: 18px;
+
+            transition:
+                color 0.22s ease,
+                background 0.22s ease,
+                transform 0.22s ease;
+        }
+
+        /* Effetto mouse */
+
+        .link:hover {
+            background: rgba(101, 214, 255, 0.09);
+
+            border-color: rgba(101, 214, 255, 0.65);
+
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20);
+
+            transform: translateY(-2px);
+        }
+
+        .link:hover i {
+            color: var(--background);
+            background: var(--accent);
+
+            transform: scale(1.05);
+        }
+
+        /* Accessibilità: navigazione da tastiera */
+
+        .link:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        /* Feedback al tocco */
+
+        .link:active {
+            transform: scale(0.985);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: 28px;
+            padding-top: 19px;
+
+            border-top: 1px solid var(--border);
+
+            color: #8299ad;
+
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* =========================
+           ANIMAZIONE INIZIALE
+        ========================= */
+
+        @keyframes entrance {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Rispetta la preferenza di movimento ridotto */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* =========================
+           SMARTPHONE
+        ========================= */
+
+        @media (max-width: 600px) {
+            body {
+                padding: 18px;
+            }
+
+            .container {
+                max-width: 400px;
+                padding: 32px 22px 23px;
+
+                border-radius: 18px;
+            }
+
+            h1 {
+                font-size: 29px;
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 24px;
+            }
+
+            .link {
+                min-height: 56px;
+
+                margin: 12px 0;
+                padding: 14px 15px;
+
+                font-size: 14px;
+            }
+
+            .link i {
+                width: 34px;
+                height: 34px;
+
+                font-size: 17px;
+            }
+
+            footer {
+                margin-top: 24px;
+            }
+        }
+
+        /* Smartphone molto stretti */
+
+        @media (max-width: 360px) {
+            body {
+                padding: 12px;
+            }
+
+            .container {
+                padding: 28px 16px 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .link {
+                padding: 13px 12px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Gilberto Fusar Imperatore</h1>
+
+        <span class="title-line" aria-hidden="true"></span>
+
+        <p>
+            Welcome to my personal website<br>
+            These are my links
+        </p>
+
+        <!-- Primo link: WhatsApp personale -->
+        <a class="link"
+           href="https://wa.me/393661873324"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <span>Personal WhatsApp</span>
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        </a>
+
+        <!-- Secondo link: chiamata personale -->
+        <a class="link"
+           href="tel:+393661873324">
+
+            <span>Call me</span>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        </a>
+
+        <!-- Terzo link: prenotazione lezione WhatsApp -->
+        <a class="link"
+           href="https://wa.me/393395410044?text=Buongiorno%2C%0Ami%20ha%20dato%20il%20contatto%20il%20Maestro%20Gilberto%20Fusar%20di%20Montecampione.%20Vorrei%20prenotare%20una%20lezione%20con%20lui."
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <span>Book a lesson with me - WhatsApp</span>
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        </a>
+
+        <!-- Quarto link: prenotazione lezione telefonica -->
+        <a class="link"
+           href="tel:+393395410044">
+
+            <span>Book a lesson with me - Call</span>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        </a>
+
+        <footer>
+            © 2026 Gilberto Fusar
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
