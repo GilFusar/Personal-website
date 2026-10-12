@@ -134,6 +134,7 @@
                 opacity: 0;
                 transform: translateY(12px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -155,7 +156,20 @@
             }
 
             .container {
-                padding: 28px 20px;
+                padding: 28px 16px;
+            }
+
+            .link {
+                gap: 6px;
+                padding: 14px 12px;
+                white-space: nowrap;
+            }
+
+            .link span {
+                flex: 1;
+                min-width: 0;
+                white-space: nowrap;
+                font-size: clamp(11px, 3.5vw, 16px);
             }
         }
 
@@ -165,8 +179,17 @@
             }
 
             .link {
-                padding: 14px;
-                font-size: 14px;
+                padding: 12px 8px;
+                gap: 4px;
+            }
+
+            .link span {
+                font-size: 11px;
+            }
+
+            .link i {
+                width: 20px;
+                font-size: 19px;
             }
         }
     </style>
@@ -176,15 +199,15 @@
     <main class="container">
 
         <img
-			class="profile-photo"
-			src="fotosito.jpg"
-			alt="Foto di Gilberto Fusar Imperatore"
-			style="cursor: pointer;"
-			onclick="openPhoto()"
-			onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openPhoto(); }"
-			tabindex="0"
-			role="button"
-			aria-label="Ingrandisci la foto"
+            class="profile-photo"
+            src="fotosito.jpg"
+            alt="Foto di Gilberto Fusar Imperatore"
+            style="cursor: pointer;"
+            onclick="openPhoto()"
+            onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openPhoto(); }"
+            tabindex="0"
+            role="button"
+            aria-label="Ingrandisci la foto"
         >
 
         <h1>Gilberto Fusar Imperatore</h1>
@@ -193,6 +216,7 @@
         <p>
             Ski Instructor<br>
             Montecampione, Italy<br>
+            MOOD SPORT - Member
         </p>
 
         <!-- Primo link prenotazione lezione WhatsApp scuola sci -->
@@ -225,42 +249,42 @@
             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
         </a>
 
-        <footer> 
-			© 2026 Mood Sport · Tutti i diritti riservati.
-		</footer>
+        <footer>
+            © 2026 Mood Sport · Tutti i diritti riservati.
+        </footer>
 
     </main>
-		
-		<!-- Ingrandimento foto profilo -->
-		<div
-			id="photoModal"
-			style="display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.88); align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;"
-			onclick="closePhoto()"
-		>
-			<img
-				src="fotosito.jpg"
-				alt="Foto ingrandita di Gilberto Fusar Imperatore"
-				style="max-width: 90%; max-height: 90vh; object-fit: contain; border-radius: 12px;"
-			>
-		</div>
-		
-		<script>
-			function openPhoto() {
-				const modal = document.getElementById('photoModal');
-				modal.style.display = 'flex';
-				document.addEventListener('keydown', handlePhotoKey);
-			}
 
-			function closePhoto() {
-				document.getElementById('photoModal').style.display = 'none';
-				document.removeEventListener('keydown', handlePhotoKey);
-			}
+    <!-- Ingrandimento foto profilo -->
+    <div
+        id="photoModal"
+        style="display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.88); align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;"
+        onclick="closePhoto()"
+    >
+        <img
+            src="fotosito.jpg"
+            alt="Foto ingrandita di Gilberto Fusar Imperatore"
+            style="max-width: 90%; max-height: 90vh; object-fit: contain; border-radius: 12px;"
+        >
+    </div>
 
-			function handlePhotoKey(event) {
-				if (event.key === 'Escape') {
-					closePhoto();
-				}
-			}
-		</script>
+    <script>
+        function openPhoto() {
+            const modal = document.getElementById('photoModal');
+            modal.style.display = 'flex';
+            document.addEventListener('keydown', handlePhotoKey);
+        }
+
+        function closePhoto() {
+            document.getElementById('photoModal').style.display = 'none';
+            document.removeEventListener('keydown', handlePhotoKey);
+        }
+
+        function handlePhotoKey(event) {
+            if (event.key === 'Escape') {
+                closePhoto();
+            }
+        }
+    </script>
 </body>
 </html>
